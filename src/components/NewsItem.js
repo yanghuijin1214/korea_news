@@ -8,16 +8,12 @@ const NewsItem=({title,description,url,urlToImage})=>{
             <div className="news_sub">
             <img className="news_img" align="right" src={urlToImage} alt={urlToImage}/>
             <h3>
-            <a className="news_a" href={url} target="_blank">
+            <a className="news_a" href={url} target="_blank" rel="noreferrer">
                 {title}
             </a>
             </h3>
             <p>{description}</p>
             </div>
-            
-            
-            <br/>
-            
         </div>
     );
 }

@@ -3,8 +3,8 @@ import Axios from 'axios';
 import NewsItem from './NewsItem';
 import Loader from "react-loader-spinner";
 
+//로딩 spinner 기능
  function Loader1() {
-    //other logic
       return (
           <div className="spinner">
               <Loader
@@ -24,12 +24,15 @@ const Genre=()=>{
      const [genre,setGenre]=useState("");
     //외부 api를 통해 뉴스목록 가져오기
     useEffect(()=>{
-        //headline 20개 가져옴
+        //url에서 장르 이름 가져오기
         setGenre(window.location.href.split('/').pop());
-        
+
         const getArticles = async()=>{
-            const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-            const res=await Axios.get(`${proxyUrl}https://newsapi.org/v2/top-headlines?country=kr&category="+genre+"&apiKey=c06ac517cf4b4576b081cdd53f9ef74e`);
+            //localhost에서만 돌아가는 news api
+            //const res=await Axios.get("https://newsapi.org/v2/top-headlines?country=kr&category="+window.location.href.split('/').pop()+"&apiKey=c06ac517cf4b4576b081cdd53f9ef74e");
+            
+            //github의 json으로 axios 수정
+            const res=await Axios.get("https://raw.githubusercontent.com/yanghuijin1214/news_json/main/"+window.location.href.split('/').pop()+".json");
             
             setArticles(res.data.articles);
         };
@@ -48,7 +51,6 @@ const Genre=()=>{
             <NewsItem title={title} description={description} url={url} urlToImage={urlToImage}/>
         )):<Loader1/>}
     </div>
-
     </div>
     );
 }
