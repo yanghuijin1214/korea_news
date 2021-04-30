@@ -42,7 +42,7 @@ const NewsList=()=>{
         <h1 className="header_txt">Top 20</h1>
         <span id="header_aft"></span>
     </section>
-    <div className="news_list">
+    <div className="news_list">git branch -M main
          {articles.length!=0?articles.map(({title,description,url,urlToImage}) => (
             <NewsItem title={title} description={description} url={url} urlToImage={urlToImage}/>
         )):<Loader1/>}
