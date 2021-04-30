@@ -28,7 +28,8 @@ const Genre=()=>{
         setGenre(window.location.href.split('/').pop());
         
         const getArticles = async()=>{
-            const res=await Axios.get("https://newsapi.org/v2/top-headlines?country=kr&category="+genre+"&apiKey=c06ac517cf4b4576b081cdd53f9ef74e");
+            const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+            const res=await Axios.get(`${proxyUrl}https://newsapi.org/v2/top-headlines?country=kr&category="+genre+"&apiKey=c06ac517cf4b4576b081cdd53f9ef74e`);
             
             setArticles(res.data.articles);
         };
