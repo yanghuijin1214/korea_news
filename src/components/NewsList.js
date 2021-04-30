@@ -3,8 +3,8 @@ import Axios from 'axios';
 import NewsItem from './NewsItem';
 import Loader from "react-loader-spinner";
 
+//로딩 spinner 기능
  function Loader1() {
-    //other logic
       return (
         <div className="spinner">
         <Loader
@@ -25,10 +25,9 @@ const NewsList=()=>{
      useEffect(()=>{
          //headline 20개 가져옴
          const getArticles = async()=>{
-            const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-             const res=await Axios.get(`${proxyUrl}https://newsapi.org/v2/top-headlines?country=kr&apiKey=c06ac517cf4b4576b081cdd53f9ef74e`);
-
-             console.log(res);
+             //const res=await Axios.get(`https://newsapi.org/v2/top-headlines?country=kr&apiKey=c06ac517cf4b4576b081cdd53f9ef74e`);
+             const res=await Axios.get("https://raw.githubusercontent.com/yanghuijin1214/news_json/main/topheadline.json");
+             
              setArticles(res.data.articles);
          };
         
@@ -42,8 +41,8 @@ const NewsList=()=>{
         <h1 className="header_txt">Top 20</h1>
         <span id="header_aft"></span>
     </section>
-    <div className="news_list">git branch -M main
-         {articles.length!=0?articles.map(({title,description,url,urlToImage}) => (
+    <div className="news_list">
+         {articles.length!==0?articles.map(({title,description,url,urlToImage}) => (
             <NewsItem title={title} description={description} url={url} urlToImage={urlToImage}/>
         )):<Loader1/>}
     </div>

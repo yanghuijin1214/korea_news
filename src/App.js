@@ -1,17 +1,10 @@
-import React,{useEffect} from "react";
+import React from "react";
 import {HashRouter,Route,Link} from 'react-router-dom';
 import './App.css';
 import NewsList from './components/NewsList';
 import Genre from './components/genre';
 
 function App() {
-  useEffect(()=>{
-    //headline 20개 가져옴
-    var genre=window.location.href.split('/').pop();
-
-    console.log(genre);
-    
-},[]);
 
   return (
     <div className="App">

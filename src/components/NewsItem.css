@@ -14,8 +14,8 @@
     padding:15px;
     margin:0 30px;
     margin-bottom:30px;
-     overflow:hidden;/*
-    text-overflow:ellipsis; */
+     overflow:hidden;
+    text-overflow:ellipsis;
     background-color:#fff;
     box-shadow:10px 10px 20px #808080;
     transition:transform 0.8s;
@@ -52,7 +52,6 @@
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
     margin-bottom:20px;
-    /* border:4px solid #645244; */
 }
 
 .news_img {

@@ -3,8 +3,8 @@ import Axios from 'axios';
 import NewsItem from './NewsItem';
 import Loader from "react-loader-spinner";
 
+//로딩 spinner 기능
  function Loader1() {
-    //other logic
       return (
           <div className="spinner">
               <Loader
@@ -26,10 +26,11 @@ const Genre=()=>{
     useEffect(()=>{
         //headline 20개 가져옴
         setGenre(window.location.href.split('/').pop());
-        
+
         const getArticles = async()=>{
-            const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-            const res=await Axios.get(`${proxyUrl}https://newsapi.org/v2/top-headlines?country=kr&category="+genre+"&apiKey=c06ac517cf4b4576b081cdd53f9ef74e`);
+            //const res=await Axios.get("https://newsapi.org/v2/top-headlines?country=kr&category="+window.location.href.split('/').pop()+"&apiKey=c06ac517cf4b4576b081cdd53f9ef74e");
+            
+            const res=await Axios.get("https://raw.githubusercontent.com/yanghuijin1214/news_json/main/"+window.location.href.split('/').pop()+".json");
             
             setArticles(res.data.articles);
         };
@@ -48,7 +49,6 @@ const Genre=()=>{
             <NewsItem title={title} description={description} url={url} urlToImage={urlToImage}/>
         )):<Loader1/>}
     </div>
-
     </div>
     );
 }
