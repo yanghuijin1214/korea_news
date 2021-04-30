@@ -25,7 +25,8 @@ const NewsList=()=>{
      useEffect(()=>{
          //headline 20개 가져옴
          const getArticles = async()=>{
-             const res=await Axios.get("https://newsapi.org/v2/top-headlines?country=kr&apiKey=c06ac517cf4b4576b081cdd53f9ef74e");
+            const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+             const res=await Axios.get(`${proxyUrl}https://newsapi.org/v2/top-headlines?country=kr&apiKey=c06ac517cf4b4576b081cdd53f9ef74e`);
 
              console.log(res);
              setArticles(res.data.articles);
@@ -41,7 +42,7 @@ const NewsList=()=>{
         <h1 className="header_txt">Top 20</h1>
         <span id="header_aft"></span>
     </section>
-    <div className="news_list">
+    <div className="news_list">git branch -M main
          {articles.length!=0?articles.map(({title,description,url,urlToImage}) => (
             <NewsItem title={title} description={description} url={url} urlToImage={urlToImage}/>
         )):<Loader1/>}
