@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/korea_news/static/css/main.eb3ada82.chunk.css",
-    "main.js": "/korea_news/static/js/main.bf99ecef.chunk.js",
-    "main.js.map": "/korea_news/static/js/main.bf99ecef.chunk.js.map",
+    "main.js": "/korea_news/static/js/main.33f1cd50.chunk.js",
+    "main.js.map": "/korea_news/static/js/main.33f1cd50.chunk.js.map",
     "runtime-main.js": "/korea_news/static/js/runtime-main.de987ab2.js",
     "runtime-main.js.map": "/korea_news/static/js/runtime-main.de987ab2.js.map",
     "static/js/2.479399ad.chunk.js": "/korea_news/static/js/2.479399ad.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.de987ab2.js",
     "static/js/2.479399ad.chunk.js",
     "static/css/main.eb3ada82.chunk.css",
-    "static/js/main.bf99ecef.chunk.js"
+    "static/js/main.33f1cd50.chunk.js"
   ]
 }
