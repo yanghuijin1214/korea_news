@@ -25,9 +25,12 @@ const NewsList=()=>{
      useEffect(()=>{
          //headline 20개 가져옴
          const getArticles = async()=>{
+             //localhost에서만 돌아가는 news api
              //const res=await Axios.get(`https://newsapi.org/v2/top-headlines?country=kr&apiKey=c06ac517cf4b4576b081cdd53f9ef74e`);
-             const res=await Axios.get("https://raw.githubusercontent.com/yanghuijin1214/news_json/main/topheadline.json");
              
+             //github의 json으로 axios 수정
+             const res=await Axios.get("https://raw.githubusercontent.com/yanghuijin1214/news_json/main/topheadline.json");
+
              setArticles(res.data.articles);
          };
         
